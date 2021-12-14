@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Koishi QQ 官方频道 API 插件",
   "keywords": [
     "koishi",
