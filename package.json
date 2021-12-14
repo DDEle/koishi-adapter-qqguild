@@ -16,6 +16,7 @@
     "koishi.js"
   ],
   "main": "dist/index.js",
+  "repository": "https://github.com/ONI-Wiki-zh/koishi-adapter-qqguild",
   "author": "DDElephant <andy-ding@outlook.com>",
   "license": "MIT",
   "dependencies": {
