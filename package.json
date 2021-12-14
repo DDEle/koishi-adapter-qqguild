@@ -1,0 +1,39 @@
+{
+  "name": "koishi-adapter-qqguild",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "build": "tsc --build --force",
+    "watch": "tsc --watch"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "version": "0.0.1",
+  "description": "Koishi QQ 官方频道 API 插件",
+  "keywords": [
+    "koishi",
+    "koishi.js"
+  ],
+  "main": "dist/index.js",
+  "author": "DDElephant <andy-ding@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@qq-guild-sdk/core": "^1.1.1",
+    "koishi-core": "^3.14.2"
+  },
+  "peerDependencies": {
+    "koishi-core": "^3.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
