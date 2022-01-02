@@ -63,20 +63,27 @@ export class QQGuildAdapter extends Adapter<'qqguild'> {
   }
   async start(): Promise<void> {
     this.bots.forEach(async (bot) => {
-      bot.$innerBot = new GBot(this.config);
+      const innerBot = new GBot(this.config);
+      bot.$innerBot = innerBot;
 
-      await bot.$innerBot.startClient(this.config.indents);
-      // bot.$innerBot.on('ready', bot.resolve)
-      bot.$innerBot.on('message', (msg) => {
+      await innerBot.startClient(this.config.indents);
+      // innerBot.on('ready', bot.resolve)
+      innerBot.on('message', (msg) => {
         const session = createSession(bot, msg);
         if (session) this.dispatch(session);
       });
-      const me = await bot.$innerBot.me;
-      bot.avatar = me.avatar;
-      bot.isBot = me.bot;
-      bot.username = me.username;
-      bot.selfId = me.id;
-      bot.status = Bot.Status.GOOD;
+
+      await new Promise((res, rej) => {
+        innerBot.on('ready', async () => {
+          const me = await innerBot.me;
+          bot.avatar = me.avatar;
+          bot.isBot = me.bot;
+          bot.username = me.username;
+          bot.selfId = me.id;
+          bot.status = Bot.Status.GOOD;
+          res(0);
+        });
+      });
     });
   }
   async stop(): Promise<void> {
