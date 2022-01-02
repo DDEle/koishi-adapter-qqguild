@@ -20,7 +20,7 @@
   "author": "DDElephant <andy-ding@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "@qq-guild-sdk/core": "^1.1.1",
+    "@qq-guild-sdk/core": "^1.1.4",
     "koishi-core": "^3.14.2"
   },
   "peerDependencies": {
